@@ -36,6 +36,11 @@ class BeersController < ApplicationController
     redirect_to beers_path
   end
 
+  def add_user
+    @beer = Beer.find(params[:id])
+    @beer.pubs.create(user_id: @current_user.id)
+    redirect_to user_url @current_user
+  end
 
   private
     def beer_params

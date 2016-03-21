@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create!(user_params)
     session[:user_id] = @user.id
-    redirect_to user_url @user
+    redirect_to user_url @current_user
   end
 
   def show
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     @user = User.destroy(params[:id])
     redirect_to new_user_url
   end
+
   private
     def user_params
       params.require(:user).permit(:name, :username, :email, :password)

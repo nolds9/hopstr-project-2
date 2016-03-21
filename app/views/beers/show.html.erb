@@ -1,5 +1,8 @@
 <div class="container">
   <h2><%= @beer.name %><%= link_to("Edit Beer Info", edit_beer_path) if @current_user %></h2>
+  <% if !@current_user.beers.include?(@beer) %>
+  <%= link_to("Add to my pub", add_user_beer_path(@beer), method: :add_beer) if @current_user %>
+  <% end %>
   <%= button_to("Delete Beer", @beer, method: :delete) if @current_user %>
 
   <div class="beer-show">
