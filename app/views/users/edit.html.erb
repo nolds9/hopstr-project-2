@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h2>Update Your Info</h2>
+
+  <div class="form">
+    <%= form_for @user do |f| %>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %><br />
+
+      <%= f.label :username %><br />
+      <%= f.text_field :username %><br />
+
+      <%= f.label :email %><br />
+      <%= f.email_field :email %><br />
+
+      <%= f.label :password %><br />
+      <%= f.password_field :password %><br />
+
+      <%= f.submit "Update Account Info" %>
+
+    <% end %>
+  </div>
+</div>

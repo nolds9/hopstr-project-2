@@ -1,0 +1,4 @@
+<img src="<%= @user.img_url %>" alt="user avatar" />
+<h1>Welcome, <%= @user.username %>! <%= link_to "Edit Profile", edit_user_path %></h1>
+
+<%= button_to "Delete Account", @user, method: :delete, data: {confirm: "Are you sure?"} %>
