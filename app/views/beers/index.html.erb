@@ -1,0 +1,18 @@
+<h2>All Beers</h2>
+
+<div class="beer-all">
+  <% @beers.each do |beer| %>
+  <div class="beer-all-show">
+    <%= link_to image_tag("http://placehold.it/100x100"), beer_path(beer) %>
+    <div class="beer-all-stats">
+      <h4>Stats:</h4>
+      <p class="label">Style: <%= beer.style %></p>
+      <p class="label">ABV: <%= beer.abv %></p>
+      <p class="label">IBU: <%= beer.ibu %></p>
+      <p class="label">Brewery: <%= beer.brewery %></p>
+      <p class="label">Location: <%= beer.location %></p>
+    </div>
+  </div>
+  <% end %>
+
+</div>

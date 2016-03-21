@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h2>Update Beer Info</h2>
+
+  <div class="form">
+    <%= form_for @beer do |f| %>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %><br />
+
+      <%= f.label :abv %><br />
+      <%= f.text_field :abv %><br />
+
+      <%= f.label :style %><br />
+      <%= f.text_field :style %><br />
+
+      <%= f.label :brewery %><br />
+      <%= f.text_field :brewery %><br />
+
+      <%= link_to "Cancel", beer_path %>
+      <%= f.submit "Update" %>
+    <% end %>
+  </div>
+</div>

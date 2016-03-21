@@ -39,10 +39,14 @@ nav {
   box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
-.beer-view {
+.beer-show {
   display: flex;
   justify-content: space-around;
   width: 800px;
+}
+
+.label {
+  font-size: 0.5em;
 }
 
 .beer-stats {
@@ -50,4 +54,21 @@ nav {
   flex-flow: column wrap;
   height: 200px;
   width: 300px;
+}
+
+.beer-all {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.beer-all-show {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  height: 100px;
+}
+
+.beer-all-stats {
+  display: flex;
+  flex-flow: column wrap;
 }

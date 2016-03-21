@@ -1,7 +1,9 @@
 <div class="container">
-  <h2><%= @beer.name %></h2>
+  <h2><%= @beer.name %><%= link_to "Edit Beer Info", edit_beer_path %></h2>
+  <%= button_to "Delete Beer", @beer, method: :delete %>
+  <%= link_to "Add to my pub", 
 
-  <div class="beer-view">
+  <div class="beer-show">
     <img src="http://placehold.it/200x200" />
     <div class="beer-stats">
       <h4>Stats:</h4>
