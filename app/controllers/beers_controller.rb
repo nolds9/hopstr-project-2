@@ -4,10 +4,12 @@ class BeersController < ApplicationController
   end
 
   def new
+    redirect_to root_url unless @current_user
     @beer = Beer.new
   end
 
   def create
+    redirect_to root_url unless @current_user
     @beer = Beer.create!(beer_params)
     redirect_to beer_path @beer
   end
@@ -17,16 +19,19 @@ class BeersController < ApplicationController
   end
 
   def edit
+    redirect_to root_url unless @current_user
     @beer = Beer.find(params[:id])
   end
 
   def update
+    redirect_to root_url unless @current_user
     @beer = Beer.find(params[:id])
     @beer.update(beer_params)
     redirect_to beer_url @beer
   end
 
   def destroy
+    redirect_to root_url unless @current_user
     @beer = Beer.find(params[:id]).destroy
     redirect_to beers_path
   end

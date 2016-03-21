@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create!(user_params)
+    session[:user_id] = @user.id
     redirect_to user_url @user
   end
 
@@ -13,16 +14,19 @@ class UsersController < ApplicationController
   end
 
   def edit
+    redirect_to root_url unless @current_user
     @user = User.find(params[:id])
   end
 
   def update
+    redirect_to root_url unless @current_user
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_url
   end
 
   def destroy
+    redirect_to root_url unless @current_user
     @user = User.destroy(params[:id])
     redirect_to new_user_url
   end

@@ -72,3 +72,11 @@ nav {
   display: flex;
   flex-flow: column wrap;
 }
+
+.notice {
+  color: #24e376
+}
+
+.error {
+  color: red;
+}
