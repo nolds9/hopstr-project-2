@@ -1,7 +1,11 @@
 <h1>All Beers</h1>
 
+<p>Can't find what you're looking for? <%= link_to "Search", new_beer_path %> for more</p>
+
 <div class="beer-all">
   <% @beers.each do |beer| %>
+  <div class="beer-all-container">
+  <h2><%= beer.name %></h2>
   <div class="beer-all-show">
     <%= link_to image_tag(beer.img_url, size: "100x100", class: "label-img"), beer_path(beer) %>
     <div class="beer-all-stats">
@@ -12,6 +16,7 @@
       <p><span class="label">Location:</span> <%= beer.location %></p>
     </div>
   </div>
+</div>
   <% end %>
 
 </div>

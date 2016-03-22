@@ -4,15 +4,23 @@ class BeersController < ApplicationController
   end
 
   def new
-    redirect_to root_url unless @current_user
+    if !@current_user
+    redirect_to root_url
+    flash[:error] = "You must be signed in to do that!"
+  end
     @beer = Beer.new
   end
 
   def create
     redirect_to root_url unless @current_user
     @found_beer = Brewerydb.new(params[:beer][:name])
+    if !Beer.find_by(name: @found_beer.name)
     @beer = Beer.create!(name: @found_beer.name, abv: @found_beer.abv, ibu: @found_beer.ibu, img_url: @found_beer.img_url, style: @found_beer.style, brewery: @found_beer.brewery, location: @found_beer.location)
-    redirect_to beer_path @beer
+    redirect_to beer_url @beer
+  else
+    flash[:error] = "That beer already exists!"
+    redirect_to beers_url
+  end
   end
 
   def show

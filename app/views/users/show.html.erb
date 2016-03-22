@@ -3,6 +3,8 @@
 
 <%= button_to("Delete Account", @user, method: :delete, data: {confirm: "Are you sure?"}) if @current_user == @user %>
 
+<h3>Check out all the <%= link_to "beers", beers_path %> or <%= link_to "search", new_beer_path %> for more</h3>
+
 
 <div class="container">
   <div class="user-beers-nav">
@@ -10,8 +12,8 @@
   <div class="user-beers-all">
     <% @current_user.beers.each do |beer| %>
       <div class="user-beer">
-        <%= link_to image_tag("http://placehold.it/100x100"), beer_path(beer) %>
         <p> <%= beer.name %> </p>
+        <%= link_to image_tag(beer.img_url, size: "150x150"), beer_path(beer) %>
       </div>
     <% end %>
   </div>

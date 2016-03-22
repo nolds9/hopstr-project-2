@@ -47,6 +47,8 @@ nav {
 
 .nav-links a {
   margin: 0 5px;
+  color: black;
+  text-decoration: none;
 }
 
 nav h1 {
@@ -73,16 +75,17 @@ nav img {
   border: 1px solid black;
 }
 
-.label-img {
-
-}
-
 .form {
   margin: auto;
   min-width: 50%;
   border: 1px solid black;
   padding: 50px;
   box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.signin-link {
+  color: gray;
+  text-decoration: none;
 }
 
 .beer-show {
@@ -104,20 +107,29 @@ nav img {
 
 .beer-all {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.beer-all h2 {
+  font-size: 2.2rem;
+}
+
+.beer-all-container {
+  text-align: center;
 }
 
 .beer-all-show {
   display: flex;
   justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 5px;
+  margin: 50px;
 }
 
 .beer-all-stats {
+  text-align: left;
   display: flex;
   flex-flow: column wrap;
+  padding-left: 10px;
 }
 
 .user-beers-nav {
@@ -151,9 +163,11 @@ nav img {
 }
 
 .notice {
+  font-size: 2em;
   color: #24e376
 }
 
 .error {
+  font-size: 2em;
   color: red;
 }
