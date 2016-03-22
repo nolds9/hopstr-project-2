@@ -8,8 +8,8 @@
 </head>
 <body>
   <nav>
-    <h1>Name</h1>
-    <img src="http://placehold.it/100x100" alt="logo"/>
+    <h1>HOPSTER</h1>
+    <%= image_tag("http://placehold.it/100x100", :alt => "logo") %>
   </nav>
   <% if @current_user %>
     <%= link_to "#{@current_user.username}", user_path(@current_user) %>

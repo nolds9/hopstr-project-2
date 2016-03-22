@@ -1,0 +1,14 @@
+<div class="container">
+  <h2><%= @beer.name %></h2>
+
+  <%= image_tag("http://placehold.it/200x200", :alt => "@beer.name") %>
+  <div class="form">
+    <%= form_for [@beer, @review] do |f| %>
+      <%= f.label :body, "Review:" %><br />
+      <%= f.text_area :body %><br />
+
+      <%= f.submit "Update Review" %>
+    <% end %>
+    <%= button_to("Delete Review", [@beer, @review], method: :delete) %>
+  </div>
+</div>

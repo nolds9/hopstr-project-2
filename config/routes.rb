@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       post "add_user"
       post "remove_user"
     end
+    resources :reviews
   end
   resources :users
   resource :session

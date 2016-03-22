@@ -1,14 +1,18 @@
 <img src="<%= @user.img_url %>" alt="user avatar" />
-<h1><%= @user.username %> <%= link_to("Edit Profile", edit_user_path) if @current_user == @user %></h1>
+<h1><%= @user.username %> <span class="edit">(<%= link_to("edit profile", edit_user_path) if @current_user == @user %>)</span></h1>
 
 <%= button_to("Delete Account", @user, method: :delete, data: {confirm: "Are you sure?"}) if @current_user == @user %>
 
 
 <div class="container">
   <div class="user-beers-nav">
+  </div>
+  <div class="user-beers-all">
     <% @current_user.beers.each do |beer| %>
-      <%= link_to image_tag("http://placehold.it/100x100"), beer_path(beer) %>
-      <p> <%= beer.name %> </p>
+      <div class="user-beer">
+        <%= link_to image_tag("http://placehold.it/100x100"), beer_path(beer) %>
+        <p> <%= beer.name %> </p>
+      </div>
     <% end %>
   </div>
 </div>
