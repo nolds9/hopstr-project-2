@@ -13,19 +13,26 @@
  *= require_tree .
  *= require_self
  */
- * {
-   box-sizing: border-box;
-   font-style: Helvetica, sans-serif;
- }
 
- html {
-   font-size: 62.5%;
- }
+ @font-face { font-family: "norwester"; src: url('norwester.ttf'); }
+
+* {
+  box-sizing: border-box;
+  font-family: 'norwester';
+}
+
+/*make root font 10px*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #F8F8FF;
+}
 
 nav {
   height: 100px;
   font-size: 3.6rem;
-  background-color: black;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid black;
@@ -33,7 +40,12 @@ nav {
 
 nav h1 {
   margin: auto 0;
-  color: #2ad51c;
+  color: #4f953b;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
 }
 
 nav img {
@@ -41,6 +53,7 @@ nav img {
 }
 
 .container {
+  font-size: 2.4rem;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +63,7 @@ nav img {
 
 .form {
   margin: auto;
+  min-width: 50%;
   border: 1px solid black;
   padding: 50px;
   box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2);
@@ -62,7 +76,7 @@ nav img {
 }
 
 .label {
-  font-size: 0.5em;
+  font-size: 1rem;
 }
 
 .beer-stats {
@@ -82,6 +96,7 @@ nav img {
   justify-content: space-around;
   width: 300px;
   height: 100px;
+  margin: 5px;
 }
 
 .beer-all-stats {

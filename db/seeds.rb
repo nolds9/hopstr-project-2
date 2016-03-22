@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+20.times do |index|
+  beer = Beer.create!(name: Faker::Beer.name,
+                      style: Faker::Beer.style,
+                      ibu: Faker::Beer.ibu,
+                      abv: Faker::Beer.alcohol)
+end

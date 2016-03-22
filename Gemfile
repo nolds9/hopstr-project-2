@@ -45,4 +45,10 @@ group :development do
   gem 'spring'
 
   gem "rails_12factor"
+
+  gem "faker"
+
+  gem "httparty"
+
+  gem "figaro"
 end
