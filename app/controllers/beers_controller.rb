@@ -10,7 +10,8 @@ class BeersController < ApplicationController
 
   def create
     redirect_to root_url unless @current_user
-    @beer = Beer.create!(beer_params)
+    @found_beer = Brewerydb.new(params[:beer][:name])
+    @beer = Beer.create!(name: @found_beer.name, abv: @found_beer.abv, ibu: @found_beer.ibu, img_url: @found_beer.img_url, style: @found_beer.style, brewery: @found_beer.brewery, location: @found_beer.location)
     redirect_to beer_path @beer
   end
 
@@ -44,6 +45,6 @@ class BeersController < ApplicationController
 
   private
     def beer_params
-      params.require(:beer).permit(:name, :brewery, :abv, :img_url, :style)
+      params.require(:beer).permit(:name, :abv, :ibu, :img_url, :brewery, :style, :location)
     end
 end

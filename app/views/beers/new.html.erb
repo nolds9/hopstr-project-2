@@ -1,22 +1,13 @@
 <div class="container">
 
-  <h2>Add a New Beer!</h2>
+  <h2>Search for a Beer!</h2>
 
   <div class="form">
     <%= form_for @beer do |f| %>
       <%= f.label :name %><br />
       <%= f.text_field :name %><br />
 
-      <%= f.label :abv %><br />
-      <%= f.text_field :abv %><br />
-
-      <%= f.label :style %><br />
-      <%= f.text_field :style %><br />
-
-      <%= f.label :brewery %><br />
-      <%= f.text_field :brewery %><br />
-
-      <%= f.submit "Add Beer" %>
+      <%= f.submit "Find Beer" %>
     <% end %>
   </div>
 </div>

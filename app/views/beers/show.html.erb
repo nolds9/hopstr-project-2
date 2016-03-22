@@ -7,7 +7,7 @@
   <% end %>
 
   <div class="beer-show">
-    <img src="http://placehold.it/200x200" alt="<%= @beer.name %>"/>
+    <%= image_tag(@beer.img_url, alt: @beer.name) %>
     <div class="beer-stats">
       <h4>Stats:</h4>
       <p class="label">Style: <%= @beer.style %></p>
