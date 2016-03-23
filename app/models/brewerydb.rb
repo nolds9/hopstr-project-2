@@ -11,7 +11,7 @@ class Brewerydb
     #assign the beer attributes from the first item in the JSON response
 
 
-
+    # have to assume users are good
     if response
       response = response["data"][0]
       if response["nameDisplay"]
