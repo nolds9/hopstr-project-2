@@ -121,7 +121,7 @@ nav img {
 }
 
 .welcome-container {
-  background-image: url("welcome-beer.jpg");
+  background-image: url("/assets/welcome-beer.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
