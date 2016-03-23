@@ -2,10 +2,10 @@
   <h2><%= @beer.name %> <span class="edit"><%= link_to("(edit beer info)", edit_beer_path) if @current_user %></span></h2>
   <% if @current_user %>
     <% if !@current_user.beers.include?(@beer) %>
-    <div class="beer-show-container">
       <%= link_to("Add to my pub", add_user_beer_path(@beer), method: :add_beer) if @current_user %>
     <% end %>
-  <% end %>
+    <% end %>
+    <div class="beer-show-container">
 
   <div class="beer-show">
     <%= image_tag(@beer.img_url, alt: @beer.name, size: "200x200") %>
@@ -22,9 +22,11 @@
   <div class="reviews">
     <h2>Reviews:</h2>
     <% @beer.reviews.reverse_each do |review| %>
+    <div class="review-body">
       <h3><%= review.user.username %></h3>
       <p><%= review.body %></p>
       <%= link_to("(edit)", edit_beer_review_path(review.beer.id, review.id)) if @current_user == review.user %>
+    </div>
     <% end %>
   </div>
 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "users#new"
+  root to: "users#welcome"
   resources :beers do
     member do
       post "add_user"

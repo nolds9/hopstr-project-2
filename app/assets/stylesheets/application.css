@@ -14,12 +14,7 @@
  *= require_self
  */
 
- @font-face { font-family: "norwester";
-              src: url('norwester.ttf');
-              src: url('norwester.eot'),
-                   url('norwester.otf'),
-                   url('norwester.woff')
-                   url('norwester.svg');
+ @font-face { font-family: "norwester"; src: url('norwester.ttf');
 }
 
 * {
@@ -96,31 +91,48 @@ nav img {
   display:flex;
   flex-direction: column;
   align-items: center;
-  height: 550px;
+  min-height: 550px;
 }
 
 .pub-container {
-  background-color: #d7b763;
-  border-radius: 30px;
-  font-size: 2.4rem;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  height: 550px;
-}
-
-.beer-show-container {
   background-color: white;
   border-radius: 30px;
   font-size: 2.4rem;
   display:flex;
   flex-direction: column;
   align-items: center;
+  min-height: 550px;
+}
+
+.beer-show-container {
+  background-color: white;
+  margin: 15px 0;
+  border-radius: 30px;
+  font-size: 2.4rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.welcome {
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+.welcome-container {
+  background-image: url("welcome-beer.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  height: 550px;
+  width: 100%
 }
 
 .form {
   margin: auto;
-  max-width: 50%;
+  max-width: 80%;
   border: 1px solid black;
   padding: 50px;
   box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2);
@@ -189,6 +201,10 @@ nav img {
   justify-content: space-around;
 }
 
+.user-beer {
+  margin: 25px;
+}
+
 .delete {
   position: absolute;
   border: none;
@@ -218,6 +234,27 @@ input {
 
 input[type=submit] {
   width: 100px;
+}
+
+.reviews {
+  margin-top: 50px;
+  align-self: center;
+  position: relative;
+  font-size: 1.5rem;
+}
+.reviews h2 {
+  font-size: 2em;
+  position: relative;
+
+}
+
+.review-body {
+  border-radius: 10px;
+  background-color: #c9c8c8;
+  padding: 5px 0 20px 20px;
+  min-height: 100px;
+  min-width: 700px;
+  margin: 10px;
 }
 
 .edit {

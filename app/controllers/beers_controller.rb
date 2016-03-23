@@ -19,7 +19,8 @@ class BeersController < ApplicationController
     # so must say if a property exists
     if @found_beer.name
       if !Beer.find_by(name: @found_beer.name)
-        @beer = Beer.create!(name: @found_beer.name, abv: @found_beer.abv, ibu: @found_beer.ibu, img_url: @found_beer.img_url, style: @found_beer.style, brewery: @found_beer.brewery, location: @found_beer.location)
+        @beer = Beer.create!(@found_beer.as_json)
+        binding.pry
         # go to that beer show page
         redirect_to beer_url @beer
       else
