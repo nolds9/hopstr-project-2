@@ -20,7 +20,6 @@ class BeersController < ApplicationController
     if @found_beer.name
       if !Beer.find_by(name: @found_beer.name)
         @beer = Beer.create!(@found_beer.as_json)
-        binding.pry
         # go to that beer show page
         redirect_to beer_url @beer
       else

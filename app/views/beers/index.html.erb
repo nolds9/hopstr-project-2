@@ -5,7 +5,7 @@
 <div class="beer-all">
   <% @beers.each do |beer| %>
   <div class="beer-all-container">
-  <h2><%= link_to beer.name, beer_path(beer), class: "beer-name-link" %></h2>
+  <h2><%= link_to beer.name, beer_path(beer), class: "name-link" %></h2>
   <div class="beer-all-show">
     <%= link_to image_tag(beer.img_url, size: "100x100", class: "label-img"), beer_path(beer) %>
     <div class="beer-all-stats">

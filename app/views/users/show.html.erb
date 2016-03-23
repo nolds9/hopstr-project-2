@@ -1,21 +1,26 @@
 <h1>
-<%= gravatar_for(@current_user) %>
-<%= @user.username %> <span class="edit">(<%= link_to("edit profile", edit_user_path) if @current_user == @user %>)</span></h1>
+<%= gravatar_for(@user) %>
+<%= @user.username %> <span class="edit"><%= link_to("(edit profile)", edit_user_path) if @current_user == @user %></span></h1>
 
 
 <h3 class="info">Check out all the <%= link_to "beers", beers_path %> or <%= link_to "search", new_beer_path %> for more</h3>
 
 
 <div class="pub-container">
-  <div class="user-beers-nav"><h2>My Pub</h2>
-    <% if @current_user.beers.count == 0 %>
+  <div class="user-beers-nav">
+    <% if @current_user == @user %>
+    <h2>My Pub</h2>
+    <% else %>
+    <h2><%= @user.username %>'s Pub</h2>
+    <% end %>
+    <% if @user.beers.count == 0 %>
       <p>Your pub is currently empty. <%= link_to("Add some beers!", beers_path) if @current_user == @user %></p>
     <% end %>
   </div>
   <div class="user-beers-all">
-    <% @current_user.beers.each do |beer| %>
+    <% @user.beers.each do |beer| %>
       <div class="user-beer">
-        <p> <%= beer.name %> </p>
+        <p> <%= link_to beer.name, beer_path(beer), class: "name-link" %> </p>
         <%= link_to image_tag(beer.img_url, size: "150x150"), beer_path(beer) %>
       </div>
     <% end %>
