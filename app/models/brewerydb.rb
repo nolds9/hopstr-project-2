@@ -12,7 +12,7 @@ class Brewerydb
 
 
     # have to assume users are good
-    if response
+    if response["data"]
       response = response["data"][0]
       if response["nameDisplay"]
         @name = response["nameDisplay"]
@@ -53,11 +53,8 @@ class Brewerydb
       if response["breweries"][0]["locations"]
         @location = response["breweries"][0]["locations"][0]["locality"] + ", " +  response["breweries"][0]["locations"][0]["region"]
       else
-        @location = "Not Abvailable"
+        @location = "Not Available"
       end
-    else
-      flash[:error] = "Beer not found"
     end
-
   end
 end

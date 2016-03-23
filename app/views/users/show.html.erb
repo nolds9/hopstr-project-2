@@ -6,7 +6,7 @@
 <h3 class="info">Check out all the <%= link_to "beers", beers_path %> or <%= link_to "search", new_beer_path %> for more</h3>
 
 
-<div class="container">
+<div class="pub-container">
   <div class="user-beers-nav"><h2>My Pub</h2>
     <% if @current_user.beers.count == 0 %>
       <p>Your pub is currently empty. <%= link_to("Add some beers!", beers_path) if @current_user == @user %></p>

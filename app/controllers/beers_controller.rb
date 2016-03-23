@@ -5,22 +5,33 @@ class BeersController < ApplicationController
 
   def new
     if !@current_user
-    redirect_to root_url
-    flash[:error] = "You must be signed in to do that!"
-  end
+      redirect_to root_url
+      flash[:error] = "You must be signed in to do that!"
+    end
     @beer = Beer.new
   end
 
   def create
     redirect_to root_url unless @current_user
     @found_beer = Brewerydb.new(params[:beer][:name])
-    if !Beer.find_by(name: @found_beer.name)
-    @beer = Beer.create!(name: @found_beer.name, abv: @found_beer.abv, ibu: @found_beer.ibu, img_url: @found_beer.img_url, style: @found_beer.style, brewery: @found_beer.brewery, location: @found_beer.location)
-    redirect_to beer_url @beer
-  else
-    flash[:error] = "That beer already exists!"
-    redirect_to beers_url
-  end
+    # if response does not include a beer flash error
+    # @found_beer is always something even if it's properties are nil,
+    # so must say if a property exists
+    if @found_beer.name
+      if !Beer.find_by(name: @found_beer.name)
+        @beer = Beer.create!(name: @found_beer.name, abv: @found_beer.abv, ibu: @found_beer.ibu, img_url: @found_beer.img_url, style: @found_beer.style, brewery: @found_beer.brewery, location: @found_beer.location)
+        # go to that beer show page
+        redirect_to beer_url @beer
+      else
+        # go to all beers
+        redirect_to beers_url
+        flash[:error] = "That beer already exists!"
+      end
+    else
+      # go to all beers
+      redirect_to beers_url
+      flash[:error] = "Beer not found!"
+    end
   end
 
   def show
@@ -52,7 +63,7 @@ class BeersController < ApplicationController
   end
 
   private
-    def beer_params
-      params.require(:beer).permit(:name, :abv, :ibu, :img_url, :brewery, :style, :location)
-    end
+  def beer_params
+    params.require(:beer).permit(:name, :abv, :ibu, :img_url, :brewery, :style, :location)
+  end
 end
