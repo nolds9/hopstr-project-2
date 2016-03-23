@@ -2,6 +2,7 @@
   <h2><%= @beer.name %> <span class="edit"><%= link_to("(edit beer info)", edit_beer_path) if @current_user %></span></h2>
   <% if @current_user %>
     <% if !@current_user.beers.include?(@beer) %>
+    <div class="beer-show-container">
       <%= link_to("Add to my pub", add_user_beer_path(@beer), method: :add_beer) if @current_user %>
     <% end %>
   <% end %>
@@ -16,6 +17,7 @@
       <p class="label">Location: <%= @beer.location %></p>
     </div>
   </div>
+</div>
   <%= link_to("Add Review", new_beer_review_path([@beer, @review])) if @current_user %>
   <div class="reviews">
     <h2>Reviews:</h2>

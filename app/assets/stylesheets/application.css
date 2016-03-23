@@ -14,7 +14,13 @@
  *= require_self
  */
 
- @font-face { font-family: "norwester"; src: url('norwester.ttf'); }
+ @font-face { font-family: "norwester";
+              src: url('norwester.ttf');
+              src: url('norwester.eot'),
+                   url('norwester.otf'),
+                   url('norwester.woff')
+                   url('norwester.svg');
+}
 
 * {
   box-sizing: border-box;
@@ -52,6 +58,7 @@ nav {
   border-radius: 20px;
   height: 100px;
   width: 100px;
+  margin-right: 10px;
 }
 
 .gravatar {
@@ -102,6 +109,15 @@ nav img {
   height: 550px;
 }
 
+.beer-show-container {
+  background-color: white;
+  border-radius: 30px;
+  font-size: 2.4rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .form {
   margin: auto;
   max-width: 50%;
@@ -128,6 +144,8 @@ nav img {
 }
 
 .beer-all {
+  background-color: white;
+  border-radius: 30px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -171,14 +189,12 @@ nav img {
   justify-content: space-around;
 }
 
-.user-beer {
-
-}
-
 .delete {
   position: absolute;
+  border: none;
+  border-radius: 10px;
   right: 40px;
-  margin-bottom: 5%;
+  margin: 2% 0;
   height: 40px;
   width: 100px;
   background-color: #cc6b6b;
@@ -187,6 +203,11 @@ nav img {
 
 .info {
   font-size: 1.5rem;
+}
+
+.beer-name-link {
+  color: black;
+  text-decoration: none;
 }
 
 input {
