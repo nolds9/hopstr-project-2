@@ -7,9 +7,8 @@
   <% end %>
 
   <div class="beer-show">
-    <%= image_tag(@beer.img_url, alt: @beer.name) %>
+    <%= image_tag(@beer.img_url, alt: @beer.name, size: "200x200") %>
     <div class="beer-stats">
-      <h4>Stats:</h4>
       <p class="label">Style: <%= @beer.style %></p>
       <p class="label">ABV: <%= @beer.abv %></p>
       <p class="label">IBU: <%= @beer.ibu %></p>

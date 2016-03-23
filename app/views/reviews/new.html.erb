@@ -3,7 +3,7 @@
 <div class="container">
   <h2><%= @beer.name %></h2>
 
-  <%= image_tag(@beer.img_url, alt: @beer.name) %>
+  <%= image_tag(@beer.img_url, alt: @beer.name, size: "200x200") %>
   <div class="form">
     <%= form_for [@beer, @review] do |f| %>
       <%= f.label :body, "Review:" %><br />

@@ -35,10 +35,19 @@ h1 {
 }
 
 nav {
-  height: 100px;
+  background-color: #e8f2d7;
+  height: 110px;
+  margin: -10px -10px 0 -10px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid black;
+}
+
+.logo {
+  background-image: url("hop-logo.jpg");
+  background-position: center;
+  border-radius: 20px;
+  height: 100px;
+  width: 100px;
 }
 
 .nav-links {
@@ -53,7 +62,8 @@ nav {
 
 nav h1 {
   margin: auto 0;
-  color: #4f953b;
+  color: #8b986b;
+  padding-left: 10px;
 }
 
 nav a {
@@ -72,7 +82,6 @@ nav img {
   flex-direction: column;
   align-items: center;
   height: 550px;
-  border: 1px solid black;
 }
 
 .form {

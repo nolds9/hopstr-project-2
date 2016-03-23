@@ -9,7 +9,7 @@
 <body>
   <nav>
     <h1><%= link_to "HOPSTER", beers_path %></h1>
-    <%= link_to(image_tag("http://placehold.it/100x100", :alt => "logo"), beers_path) %>
+    <div class="logo"></div>
   </nav>
   <div class="nav-links">
     <% if @current_user %>
