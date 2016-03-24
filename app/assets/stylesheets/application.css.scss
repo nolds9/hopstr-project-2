@@ -53,7 +53,7 @@ nav {
 }
 
 .logo {
-  background-image: url("hop-logo.jpg");
+  background-image: asset-url("hop-logo.jpg");
   background-position: center;
   border-radius: 20px;
   height: 100px;
@@ -126,7 +126,7 @@ nav img {
 }
 
 .welcome-container {
-  background-image: url("/assets/welcome-beer.jpg");
+  background-image: asset-url("/assets/welcome-beer.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
