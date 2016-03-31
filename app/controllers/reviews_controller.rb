@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  # NHO: see note in users controller w/ regards to DRYing up repetitive db calls
   def new
     @beer = Beer.find(params[:beer_id])
     @review = @beer.reviews.new
@@ -6,8 +7,8 @@ class ReviewsController < ApplicationController
 
   def create
     @beer = Beer.find(params[:beer_id])
-    @review = @beer.reviews.create!(review_params)
-    @review = @review.update(user_id: @current_user.id)
+    @review = @beer.reviews.create!(review_params) # .merge(user: @current_user)
+    @review = @review.update(user_id: @current_user.id) # NHO: can do this in one line with by merging in
     redirect_to beer_url @beer
   end
 

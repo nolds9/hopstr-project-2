@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# NHO: Could be nice to include some beers prepopulated in the seeds for testing purposes
+# btw, you can make API calls in your seeds: just need to require 'HTTParty'

@@ -1,4 +1,5 @@
 class BeersController < ApplicationController
+  # NHO: could be worth exploring CanCanCan to help DRY up authorization code
   def index
     @beers = Beer.all
   end
@@ -13,6 +14,8 @@ class BeersController < ApplicationController
 
   def create
     redirect_to root_url unless @current_user
+    # NHO: confident that part of this code can be moved to the model.
+    # Possibly as a custom method that just takes in a new instance of a Brewerydb and returns a Beer instance
     @found_beer = Brewerydb.new(params[:beer][:name])
     # if response does not include a beer flash error
     # @found_beer is always something even if it's properties are nil,

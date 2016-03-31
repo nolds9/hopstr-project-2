@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
+# NHO: one thing I like to do is alphabetize any custom gems not included in rails new for easy reference later.
 gem "rails_12factor"
 
 gem "faker"
@@ -55,4 +55,4 @@ group :development do
 
 end
 
-gem 'pry'
+gem 'pry' # NHO: recommend moving this to the development / test group

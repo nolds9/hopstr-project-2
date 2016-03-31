@@ -1,30 +1,38 @@
-#Project 2
+# Project 2
 
-##Hopstr
+## Hopstr
 
-###Technologies used
+### Technologies used
 - Ruby on Rails
 - HTML
 - CSS
 - BreweryDB API
 
 
-###Installation
+### Installation
 To run this app locally:
 - make sure you have rails installed
 - fork and clone this repo
 - cd into the app directory
+<!-- NHO: bundle install and db setup?  -->
 - type `$ rails s` in your terminal to start up your rails server
 - navigate to `localhost:3000` in your web browser
 
 
-###Approach
+### Approach
+
 For this project I made an app where logged in users can track and review the beers that they've tried. The first thing I did was make the beer models with full CRUD functionality. Next, was to add the users and set it up so that the users could add beers to their "pub". Finally, I added a search feature where users could search for a beer that wasn't already in the database.
 
 
-###Unsolved Issues
-Currently there is no way to show a list of search results, so you must be very specific when searching for beers. I hope to correct this in a future up date.
+### Unsolved Issues
+
+Currently there is no way to show a list of search results, so you must be very specific when searching for beers. I hope to correct this in a future update.
 
 
-###Future Features
+## Future Features
+
 The next feature I would like to add is a rating system for the beers where users can rate the beers they've tried and when viewing a beer the average rating will be displayed.
+
+<!-- NHO: would recommend looking into ratyRate gem https://github.com/wazery/ratyrate  -->
+  <!-- http://www.sitepoint.com/ratyrate-add-rating-rails-app/  -->
+<!-- Or Raty.js http://paweljaniak.co.za/2013/07/25/5-star-ratings-with-rails/  -->

@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  # NHO: One common practice is to abstract all the times you "find" a user/beer/ other resource into a method
+  # that is run before a controller action. i.e:
+    # before_action :find_beer, only: [:show, :update, :edit, :destroy]
+  # of course you would have to define `find_beer` in this example
+  
   def new
     @user = User.new
   end

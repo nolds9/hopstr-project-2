@@ -2,6 +2,7 @@ class Brewerydb
   attr_accessor :name, :abv, :ibu, :img_url, :style, :brewery, :location
 
   def initialize(beer_name)
+    # NHO: Do you have to control for case sensitivty / white space at all in this query?
     #url for call to api
     url = "http://api.brewerydb.com/v2/search?q=#{beer_name}&withBreweries=Y&type=beer&key=#{ENV["brewerydb_api_key"]}"
 
@@ -14,6 +15,8 @@ class Brewerydb
     # have to assume users are good
     if response["data"]
       response = response["data"][0]
+
+      # NHO: could simplify these checks with something like: @name = response["nameDisplay"] || "Not Available"
       if response["nameDisplay"]
         @name = response["nameDisplay"]
       else

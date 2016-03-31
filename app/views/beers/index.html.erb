@@ -4,19 +4,18 @@
 
 <div class="beer-all">
   <% @beers.each do |beer| %>
-  <div class="beer-all-container">
-  <h2><%= link_to beer.name, beer_path(beer), class: "name-link" %></h2>
-  <div class="beer-all-show">
-    <%= link_to image_tag(beer.img_url, size: "100x100", class: "label-img"), beer_path(beer) %>
-    <div class="beer-all-stats">
-      <p><span class="label">Style:</span> <%= beer.style %></p>
-      <p><span class="label">ABV:</span> <%= beer.abv %></p>
-      <p><span class="label">IBU:</span> <%= beer.ibu %></p>
-      <p><span class="label">Brewery:</span> <%= beer.brewery %></p>
-      <p><span class="label">Location:</span> <%= beer.location %></p>
+    <div class="beer-all-container">
+      <h2><%= link_to beer.name, beer_path(beer), class: "name-link" %></h2>
+      <div class="beer-all-show">
+        <%= link_to image_tag(beer.img_url, size: "100x100", class: "label-img"), beer_path(beer) %>
+        <div class="beer-all-stats">
+          <p><span class="label">Style:</span> <%= beer.style %></p>
+          <p><span class="label">ABV:</span> <%= beer.abv %></p>
+          <p><span class="label">IBU:</span> <%= beer.ibu %></p>
+          <p><span class="label">Brewery:</span> <%= beer.brewery %></p>
+          <p><span class="label">Location:</span> <%= beer.location %></p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   <% end %>
-
 </div>
